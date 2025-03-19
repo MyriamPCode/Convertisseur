@@ -63,6 +63,27 @@ public class ConvertisseurUnitesGUI {
         fenetre.add(boutonConvertir);
         fenetre.add(labelResultat);
         
+        //Action lorsque l'on clique sur le bouton Convertir
+        boutonConvertir.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    String uniteSource = textFieldSource.getText();
+                    String uniteCible = textFieldCible.getText();
+                    double valeur = Double.parseDouble(textFieldValeur.getText());
+                    
+                    double resultat = convertir(uniteSource, uniteCible, valeur);
+                    
+                    if (resultat != -1) {
+                        labelResultat.setText(valeur + " " + uniteSource + " = " + resultat + " " + uniteCible);
+                    } else {
+                        labelResultat.setText("Unite invalide !");
+                    }
+                } catch (NumberFormatException ex) {
+                    labelResultat.setText("Veuillez entrer une valeur numérique valide.");
+                }
+            }
+        });
         fenetre.setVisible(true);
     }
     
