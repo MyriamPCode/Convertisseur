@@ -3,11 +3,16 @@
  * @author myria
  */
 
-import java.util.Scanner;
+import javax.swing.*;  // Pour créer l'interface graphique
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+//import java.util.Scanner;
 
-public class ConvertisseurUnites {
+public class ConvertisseurUnitesGUI {
     
     public static void main(String[] args) {
+        /*
         Scanner scanner = new Scanner(System.in); // Pour lire les entrées
         
         System.out.println("Bienvenue sur le convertisseur d'unités.");
@@ -29,7 +34,15 @@ public class ConvertisseurUnites {
             System.out.println("Unite non valide !");
         }
         
-        scanner.close();
+        scanner.close();*/
+        
+        JFrame fenetre = new JFrame("Convertisseur d'unites");
+        fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        fenetre.setSize(400, 300);
+        fenetre.setLayout(new FlowLayout());
+        
+        
+        fenetre.setVisible(true);
     }
     
     public static double convertir(String uniteSource, String uniteCible, double valeur){
