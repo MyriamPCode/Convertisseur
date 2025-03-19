@@ -41,6 +41,27 @@ public class ConvertisseurUnitesGUI {
         fenetre.setSize(400, 300);
         fenetre.setLayout(new FlowLayout());
         
+        JLabel labelSource = new JLabel("Unité source (m, km, cm) :");
+        JTextField textFieldSource = new JTextField(10);
+        
+        JLabel labelCible = new JLabel("Unité cible (m, km, cm) :");
+        JTextField textFieldCible = new JTextField(10);
+        
+        JLabel labelValeur = new JLabel("Valeur à convertir :");
+        JTextField textFieldValeur = new JTextField(10);
+        
+        JButton boutonConvertir = new JButton("Convertir");
+       
+        JLabel labelResultat = new JLabel("Résultat :");
+        
+        fenetre.add(labelSource);
+        fenetre.add(textFieldSource);
+        fenetre.add(labelCible);
+        fenetre.add(textFieldCible);
+        fenetre.add(labelValeur);
+        fenetre.add(textFieldValeur);
+        fenetre.add(boutonConvertir);
+        fenetre.add(labelResultat);
         
         fenetre.setVisible(true);
     }
