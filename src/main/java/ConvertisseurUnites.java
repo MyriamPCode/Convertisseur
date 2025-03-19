@@ -24,7 +24,7 @@ public class ConvertisseurUnites {
         double resultat=convertir(uniteSource, uniteCible, valeur);
         
         if(resultat != -1) {
-            System.out.println(valeur + "" + uniteSource + "=" + resultat + "" + uniteCible);
+            System.out.println(valeur + " " + uniteSource + " = " + resultat + " " + uniteCible);
             } else {
             System.out.println("Unite non valide !");
         }
@@ -49,6 +49,22 @@ public class ConvertisseurUnites {
                 break;
             default:
                 System.out.println("Unite source invalide");
+                return -1;
+        }
+        
+        // Convertir des mètres vers l'unité cible
+        switch(uniteCible) {
+            case "m" :
+                resultat = enMetres;
+                break;
+            case "km" : 
+                resultat = enMetres / 1000;
+                break;
+            case "cm" : 
+                resultat = enMetres * 100;
+                break;
+            default : 
+                System.out.println("Unite cible invalide !");
                 return -1;
         }
         return resultat;
